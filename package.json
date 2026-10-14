@@ -1,0 +1,9 @@
+{
+  "name": "brac-live-workshop",
+  "version": "1.0.0",
+  "description": "منصة تفاعل مباشر لورشة إعداد خطة التكيف المحلية - مشروع BRAC",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=16" },
+  "license": "MIT"
+}
