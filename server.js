@@ -14,7 +14,7 @@ const crypto = require('crypto');
 const PORT = +process.env.PORT || 3000;
 const PIN = String(process.env.PIN || '2026');
 const DATA_FILE = process.env.DATA_FILE || path.join(__dirname, 'data.json');
-const PUB = __dirname;
+const PUB = path.join(__dirname, 'public');
 
 const TYPES = ['choice', 'tf', 'word', 'text'];
 const TYPE_AR = { choice: 'اختيار من متعدد', tf: 'صح / خطأ', word: 'كلمة', text: 'نص' };
