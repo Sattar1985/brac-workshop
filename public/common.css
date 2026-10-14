@@ -1,0 +1,17 @@
+:root{
+  --green-900:#0b3a28; --green-800:#0f4d34; --green-700:#16643f; --green-600:#1f7f50; --green-100:#e3f1e8;
+  --gold:#e2a93b; --gold-dark:#b9821a;
+  --water:#1d86b3; --water-dark:#13617f;
+  --sand:#f6f1e5; --sand-2:#ebe3cf;
+  --ink:#16261d; --ink-2:#4a5a50; --line:#d9d2bd;
+  --yes:#1f9d57; --no:#d8503f;
+  --c1:#1f9d6a; --c2:#e2a93b; --c3:#1d86b3; --c4:#c8553d; --c5:#7a5fb3; --c6:#2f9aa0; --c7:#b0782e; --c8:#5c7a2f;
+  --font:"Segoe UI","Noto Sans Arabic","Noto Kufi Arabic",Tahoma,"Geeza Pro","Arial",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{direction:rtl}
+body{font-family:var(--font);color:var(--ink);background:var(--sand);line-height:1.5;-webkit-font-smoothing:antialiased}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
