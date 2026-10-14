@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>شاشة العرض — ورشة BRAC</title>
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="screen.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="emblem" id="emblem"></div>
+    <div>
+      <h1 id="title">ورشة إعداد خطة التكيف المحلية</h1>
+      <p id="subtitle"></p>
+      <p class="venue" id="venue"></p>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b id="sJoined">0</b><span>مشارك</span></div>
+    <div class="stat live"><b id="sOnline">0</b><span>متصل الآن</span></div>
+  </div>
+</header>
+
+<main id="main" class="idle">
+  <!-- حالة الانتظار: باركود كبير -->
+  <section class="idle-view" id="idleView">
+    <div class="qrcard big" id="qrBig"></div>
+    <div class="idle-text">
+      <h2>شاركونا رأيكم</h2>
+      <ol class="steps">
+        <li><i>1</i><span>افتح كاميرا هاتفك</span></li>
+        <li><i>2</i><span>وجّهها نحو الباركود</span></li>
+        <li><i>3</i><span>أجب عن الأسئلة التي تظهر لك</span></li>
+      </ol>
+      <p class="noreg">بدون تسجيل · لا حاجة لاسم أو بريد إلكتروني</p>
+      <div class="url" id="urlBig" dir="ltr"></div>
+    </div>
+  </section>
+
+  <!-- حالة السؤال -->
+  <section class="live-view" id="liveView">
+    <div class="qpane">
+      <div class="qmeta">
+        <span class="chip" id="qType"></span>
+        <span class="status" id="qStatus"></span>
+      </div>
+      <h2 class="qtext" id="qText"></h2>
+      <div class="results" id="results"></div>
+    </div>
+    <aside class="side">
+      <div class="qrcard small" id="qrSmall"></div>
+      <p class="scan">امسح للمشاركة</p>
+      <div class="url small" id="urlSmall" dir="ltr"></div>
+      <div class="count"><b id="cnt">0</b><span>إجابة</span></div>
+    </aside>
+  </section>
+</main>
+
+<div class="offline" id="offline" hidden>انقطع الاتصال بالخادم… تتم إعادة المحاولة</div>
+
+<script src="qrcode.js"></script>
+<script src="common.js"></script>
+<script src="screen.js"></script>
+</body>
+</html>

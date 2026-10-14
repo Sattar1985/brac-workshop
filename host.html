@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>لوحة تحكم المقدّم — ورشة BRAC</title>
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="host.css">
+</head>
+<body>
+
+<!-- بوابة الرمز -->
+<div class="gate" id="gate">
+  <form class="gate-card" id="gateForm">
+    <div class="emb" id="gEmb"></div>
+    <h1>لوحة تحكم المقدّم</h1>
+    <p>أدخل رمز الدخول</p>
+    <input type="password" id="pin" inputmode="numeric" autocomplete="off" placeholder="••••" autofocus>
+    <button class="btn primary" type="submit">دخول</button>
+    <div class="gerr" id="gerr" hidden></div>
+  </form>
+</div>
+
+<div id="app" hidden>
+  <header class="hbar">
+    <div class="hb-title"><span class="emb" id="hEmb"></span><div><b id="hTitle">لوحة التحكم</b><small>تحكم كامل بالأسئلة المعروضة على الشاشة</small></div></div>
+    <div class="hb-stats"><span class="pill"><i class="dot"></i><b id="hOnline">0</b> متصل</span><span class="pill"><b id="hJoined">0</b> مشارك</span></div>
+    <div class="hb-actions">
+      <a class="btn" href="/screen" target="_blank" rel="noopener">🖥 فتح شاشة العرض</a>
+      <a class="btn" id="btnCsv" href="#">⬇ تصدير الإجابات (CSV)</a>
+      <button class="btn" id="btnSettings">⚙ الإعدادات</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- التحكم بالسؤال المعروض -->
+    <section class="panel live" id="livePanel">
+      <div class="live-empty" id="liveEmpty">
+        <b>الشاشة تعرض الآن: الباركود</b>
+        <span>اختر سؤالاً من القائمة وانقر «عرض على الشاشة» ليظهر للجمهور.</span>
+      </div>
+      <div id="liveBox" hidden>
+        <div class="live-head"><span class="tag" id="lTag"></span><span class="state" id="lState"></span><span class="n"><b id="lCount">0</b> إجابة</span></div>
+        <h2 id="lText"></h2>
+        <div class="live-btns">
+          <button class="btn" id="bOpen"></button>
+          <button class="btn" id="bShow"></button>
+          <button class="btn" id="bNext">⏭ السؤال التالي</button>
+          <button class="btn warn" id="bClear">🧹 مسح الإجابات</button>
+          <button class="btn" id="bStop">⏹ إنهاء العرض (عودة للباركود)</button>
+        </div>
+        <div class="mod" id="mod"></div>
+      </div>
+    </section>
+
+    <!-- قائمة الأسئلة -->
+    <section class="panel">
+      <div class="ph"><h2>الأسئلة</h2><button class="btn primary" id="btnNew">＋ سؤال جديد</button></div>
+      <div id="qlist" class="qlist"></div>
+      <p class="empty" id="qempty" hidden>لا توجد أسئلة بعد. أضف سؤالك الأول بالضغط على «سؤال جديد».</p>
+    </section>
+  </main>
+</div>
+
+<!-- نافذة السؤال -->
+<dialog id="dlgQ">
+  <form id="formQ" method="dialog">
+    <h2 id="dqTitle">سؤال جديد</h2>
+    <label class="lbl">نوع السؤال</label>
+    <div class="types" id="dqTypes">
+      <button type="button" data-t="choice">☑ اختيار من متعدد</button>
+      <button type="button" data-t="tf">✓✗ صح / خطأ</button>
+      <button type="button" data-t="word">☁ كلمة (سحابة كلمات)</button>
+      <button type="button" data-t="text">✎ نص حر</button>
+    </div>
+    <label class="lbl" for="dqText">نص السؤال</label>
+    <textarea id="dqText" rows="3" maxlength="300" placeholder="اكتب السؤال كما سيظهر على الشاشة…"></textarea>
+
+    <div id="dqChoice" hidden>
+      <label class="lbl">الخيارات (من 2 إلى 8)</label>
+      <div id="dqOpts"></div>
+      <button type="button" class="btn small" id="dqAddOpt">＋ إضافة خيار</button>
+      <label class="chk"><input type="checkbox" id="dqMulti"> السماح باختيار أكثر من إجابة</label>
+    </div>
+    <div id="dqWord" hidden>
+      <label class="lbl" for="dqMax">أقصى عدد كلمات لكل مشارك</label>
+      <select id="dqMax"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select>
+    </div>
+
+    <div class="gerr" id="dqErr" hidden></div>
+    <div class="dlg-btns">
+      <button type="button" class="btn" id="dqCancel">إلغاء</button>
+      <button type="submit" class="btn primary" id="dqSave">حفظ السؤال</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- الإعدادات -->
+<dialog id="dlgS">
+  <form method="dialog" id="formS">
+    <h2>الإعدادات</h2>
+    <label class="lbl" for="sTitle">عنوان الورشة</label><input id="sTitle" maxlength="120">
+    <label class="lbl" for="sSub">العنوان الفرعي</label><input id="sSub" maxlength="200">
+    <label class="lbl" for="sVenue">المكان والتاريخ</label><input id="sVenue" maxlength="120">
+    <label class="lbl" for="sUrl">رابط المشاركة داخل الباركود</label>
+    <input id="sUrl" dir="ltr" placeholder="يُكتشف تلقائياً — اتركه فارغاً">
+    <div class="chips" id="sUrls"></div>
+    <p class="note">يُكتشف رابط الشبكة المحلية تلقائياً. إذا نشرت المنصة على الإنترنت فضع هنا رابطها العام.</p>
+    <div class="gerr" id="sErr" hidden></div>
+    <div class="dlg-btns">
+      <button type="button" class="btn" id="sCancel">إغلاق</button>
+      <button type="submit" class="btn primary">حفظ</button>
+    </div>
+    <hr>
+    <div class="danger">
+      <button type="button" class="btn" id="sSamples">إضافة أسئلة نموذجية</button>
+      <button type="button" class="btn warn" id="sResetAns">حذف كل الإجابات</button>
+      <button type="button" class="btn warn" id="sResetAll">حذف كل الأسئلة والإجابات</button>
+    </div>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="common.js"></script>
+<script src="host.js"></script>
+</body>
+</html>
