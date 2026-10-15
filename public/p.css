@@ -28,7 +28,7 @@ main{flex:1;position:relative;padding:0 14px calc(24px + env(safe-area-inset-bot
 .hint{color:var(--ink-2);font-size:.85rem;margin:-8px 0 14px}
 
 .opts{display:flex;flex-direction:column;gap:10px}
-.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:right;background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 14px;font-size:1.05rem;line-height:1.5;transition:.15s}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:right;background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 14px;font-size:1.05rem;line-height:1.5;font-weight:600;transition:.15s}
 .opt:active{transform:scale(.985)}
 .opt .mark{width:26px;height:26px;border-radius:50%;border:2px solid #b9b39c;flex:none;display:grid;place-items:center;transition:.15s;background:#fff}
 .opt.multi .mark{border-radius:8px}

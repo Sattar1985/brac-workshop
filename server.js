@@ -347,7 +347,7 @@ function exportCsv() {
 /* ------------------------------------------------------------------ */
 /* HTTP                                                                */
 /* ------------------------------------------------------------------ */
-const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'application/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.json': 'application/json' };
+const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'application/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.woff2': 'font/woff2', '.json': 'application/json' };
 const ROUTES = { '/': '/index.html', '/screen': '/screen.html', '/host': '/host.html' };
 
 function readBody(req) {

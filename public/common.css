@@ -6,7 +6,7 @@
   --ink:#16261d; --ink-2:#4a5a50; --line:#d9d2bd;
   --yes:#1f9d57; --no:#d8503f;
   --c1:#1f9d6a; --c2:#e2a93b; --c3:#1d86b3; --c4:#c8553d; --c5:#7a5fb3; --c6:#2f9aa0; --c7:#b0782e; --c8:#5c7a2f;
-  --font:"Segoe UI","Noto Sans Arabic","Noto Kufi Arabic",Tahoma,"Geeza Pro","Arial",system-ui,sans-serif;
+  --font:"Cairo","Segoe UI","Noto Sans Arabic",Tahoma,system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{direction:rtl}

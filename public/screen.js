@@ -52,7 +52,8 @@
     st.classList.toggle('closed', !q.open);
     const qt = $('qText');
     qt.textContent = q.text;
-    qt.classList.toggle('long', q.text.length > 90);
+    qt.classList.toggle('long', q.text.length > 90 && q.text.length <= 170);
+    qt.classList.toggle('xlong', q.text.length > 170);
 
     const r = state.results || { total: 0 };
     const cnt = $('cnt');
@@ -82,7 +83,7 @@
 
   function renderBars(q, r) {
     ensure('bars:' + q.id + ':' + q.options.join('|'), (box) => {
-      box.innerHTML = '<div class="bars">' + q.options.map((o, i) =>
+      box.innerHTML = '<div class="bars' + (q.options.length > 6 ? ' dense' : '') + '">' + q.options.map((o, i) =>
         `<div class="bar" data-i="${i}" style="--c:${COLORS[i % COLORS.length]}"><div class="lab"><span>${esc(o)}</span><b><span class="pc">0%</span><small class="v">0</small></b></div><div class="track"><div class="fill"></div></div></div>`).join('') + '</div>';
     });
     const total = r.counts.reduce((a, b) => a + b, 0);
@@ -127,8 +128,8 @@
 
     const max = words[0].n, min = words[words.length - 1].n;
     const count = words.length;
-    const top = count <= 6 ? 7.2 : count <= 15 ? 5.8 : count <= 35 ? 4.4 : 3.4;
-    const low = count <= 15 ? 2.2 : count <= 35 ? 1.7 : 1.3;
+    const top = count <= 6 ? 5.6 : count <= 15 ? 4.6 : count <= 35 ? 3.5 : 2.8;
+    const low = count <= 15 ? 1.8 : count <= 35 ? 1.4 : 1.1;
     const existing = new Map([...cloud.children].map((el) => [el.dataset.k, el]));
     const keep = new Set();
 
