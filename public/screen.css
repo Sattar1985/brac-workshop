@@ -7,8 +7,8 @@ body{height:100vh;height:100dvh;overflow:hidden;display:flex;flex-direction:colu
 
 .top{flex:none;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:.7rem 1.8rem;background:linear-gradient(90deg,var(--green-900),var(--green-700));color:#fff;border-bottom:.25rem solid var(--gold)}
 .brand{display:flex;align-items:center;gap:.9rem;min-width:0}
-.emblem{width:3.6rem;height:3.6rem;flex:none}
-.emblem svg{width:100%;height:100%}
+.emblem{width:4.8rem;height:4.8rem;flex:none;filter:drop-shadow(0 .15rem .4rem rgba(0,0,0,.35))}
+.emblem svg,.emblem img{display:block;width:100%;height:100%;object-fit:contain}
 .top h1{font-size:1.6rem;line-height:1.3;font-weight:800}
 .top p{font-size:.95rem;color:#d6eadd;line-height:1.35}
 .top .venue{color:#ffd37a;font-weight:700}
@@ -30,6 +30,7 @@ main.idle .live-view,main.live .idle-view{display:none}
 .qrcard.big{width:min(58vh,32vw);animation:float 5s ease-in-out infinite}
 @keyframes float{50%{transform:translateY(-.4rem)}}
 .idle-text{max-width:34rem}
+.idle-logo{display:block;width:6.5rem;height:6.5rem;margin-bottom:.8rem;filter:drop-shadow(0 .25rem .6rem rgba(15,77,52,.3))}
 .idle-text h2{font-size:3.2rem;line-height:1.2;margin-bottom:1.2rem;color:var(--green-800)}
 .steps{list-style:none;display:flex;flex-direction:column;gap:.9rem;margin-bottom:1.3rem}
 .steps li{display:flex;align-items:center;gap:.9rem;font-size:1.6rem;font-weight:700}

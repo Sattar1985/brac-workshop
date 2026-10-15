@@ -1,17 +1,7 @@
 /* أدوات مشتركة بين الصفحات الثلاث */
 const TYPE_LABEL = { choice: 'اختيار من متعدد', tf: 'صح / خطأ', word: 'كلمة', text: 'نص' };
 
-const EMBLEM = `<svg viewBox="0 0 64 64" aria-hidden="true">
-  <circle cx="32" cy="32" r="30" fill="#0f4d34" stroke="#e2a93b" stroke-width="2"/>
-  <path d="M32 50V22" stroke="#e2a93b" stroke-width="2.6" stroke-linecap="round"/>
-  <g fill="#e2a93b">
-    <ellipse cx="32" cy="15" rx="3" ry="5.2"/>
-    <ellipse cx="26" cy="22" rx="2.8" ry="5" transform="rotate(-35 26 22)"/><ellipse cx="38" cy="22" rx="2.8" ry="5" transform="rotate(35 38 22)"/>
-    <ellipse cx="25.5" cy="30" rx="2.8" ry="5" transform="rotate(-35 25.5 30)"/><ellipse cx="38.5" cy="30" rx="2.8" ry="5" transform="rotate(35 38.5 30)"/>
-  </g>
-  <path d="M14 50c6-3 10-3 18 0s12 3 18 0" fill="none" stroke="#6ec3e6" stroke-width="2.4" stroke-linecap="round"/>
-  <path d="M16 56c6-3 10-3 16 0s10 3 16 0" fill="none" stroke="#6ec3e6" stroke-width="2" stroke-linecap="round" opacity=".6"/>
-</svg>`;
+const EMBLEM = '<img src="logo-moe.png" alt="شعار وزارة البيئة" draggable="false">';
 
 /* باركود (QR) كـ SVG — يعتمد على مكتبة qrcode.js المحلية */
 function qrSvg(text) {

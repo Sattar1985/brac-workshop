@@ -1,6 +1,6 @@
 body{background:var(--sand);min-height:100vh}
 .emb{display:inline-block;width:42px;height:42px;flex:none}
-.emb svg{width:100%;height:100%}
+.emb svg,.emb img{display:block;width:100%;height:100%;object-fit:contain}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;border:2px solid var(--line);background:#fff;color:var(--ink);border-radius:12px;padding:.55rem 1rem;font-weight:700;font-size:.95rem;text-decoration:none;transition:.15s;white-space:nowrap}
 .btn:hover{border-color:var(--green-600)}
@@ -15,7 +15,7 @@ body{background:var(--sand);min-height:100vh}
 /* البوابة */
 .gate{position:fixed;inset:0;z-index:50;display:grid;place-items:center;background:linear-gradient(160deg,var(--green-900),var(--green-700));padding:16px}
 .gate-card{background:#fff;border-radius:22px;padding:30px 26px;width:min(380px,100%);text-align:center;display:flex;flex-direction:column;gap:12px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
-.gate-card .emb{width:70px;height:70px;margin:0 auto}
+.gate-card .emb{width:96px;height:96px;margin:0 auto}
 .gate-card h1{font-size:1.4rem;color:var(--green-800)}
 .gate-card p{color:var(--ink-2)}
 .gate-card input{border:2px solid var(--line);border-radius:12px;padding:12px;font-size:1.5rem;text-align:center;letter-spacing:.4em;outline:none}
